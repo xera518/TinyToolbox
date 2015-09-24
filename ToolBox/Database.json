@@ -1,0 +1,44 @@
+﻿{
+"Fileversion":201505261937,
+"Mostrecent":"http://zerozero.schedar.uberspace.de/Database.json",
+"Programs":
+  [
+    {"Name":"Opera",						"Category":"Browser", 				"File":"OperaStable.exe",						"DL":"http://net.geo.opera.com/opera/stable/windows"},	
+	{"Name":"Firefox",						"Category":"Browser",				"File":"Firefox_Setup.exe",						"DL":"https://download.mozilla.org/?product=firefox-stub&os=win"},
+	{"Name":"Chrome", 						"Category":"Browser",				"File":"ChromeSetup.exe",						"DL":"https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7BF23073DB-ECBB-FA39-5B9E-D6BB7F8EDE17%7D%26lang%3Den%26browser%3D4%26usagestats%3D0%26appname%3DGoogle%2520Chrome%26needsadmin%3Dprefers%26installdataindex%3Ddefaultbrowser/update2/installers/ChromeSetup.exe"},
+	{"Name":"Waterfox", 					"Category":"Browser",				"File":"Waterfox_Setup_38.0.exe",				"DL":"https://d1th2p59px32bw.cloudfront.net/releases/win64/installer/Waterfox%2038.0%20Setup.exe"},
+	{"Name":"Vivaldi",						"Category":"Browser",				"File":"Vivaldi_TP3.1.0.162.9.exe",				"DL":"https://vivaldi.com/download/Vivaldi_TP3.1.0.162.9.exe"},	
+	
+    {"Name":"Skype", 						"Category":"Communication",			"File":"SkypeSetup.exe",						"DL":"http://www.skype.com/go/getskype"},
+	{"Name":"Telegram",						"Category":"Communication",			"File":"tsetup.0.8.17.exe",						"DL":"https://updates.tdesktop.com/tsetup/tsetup.0.8.17.exe"},
+
+    {"Name":"VLC", 							"Category":"Multimedia",			"File":"VLC-2.2.1-win32.exe",					"DL":"https://get.videolan.org/vlc/2.2.1/win32/vlc-2.2.1-win32.exe"},
+	{"Name":"SVP", 				 			"Category":"Multimedia",			"File":"SVP_3.1.6.exe",							"DL":"http://www.svp-team.com/files/SVP_3.1.6.exe"},
+	{"Name":"Shockwave Player", 			"Category":"Multimedia",			"File":"Shockwave_Installer_Slim.exe",			"DL":"https://fpdownload.macromedia.com/get/shockwave/default/english/win95nt/latest/Shockwave_Installer_Slim.exe"},
+	{"Name":"Adobe Flash Player",			"Category":"Multimedia",			"File":"Flashplayer17pp_fa_install.exe",		"DL":"https://admdownload.adobe.com/bin/live/flashplayer17pp_fa_install.exe"},
+	
+	{"Name":"Gimp",							"Category":"Office",				"File":"gimp-2.8.0-setup.exe",					"DL":"http://de-mirror.gimper.net/pub/gimp/v2.8/windows/gimp-2.8.0-setup.exe"},
+	{"Name":"LibreOffice",					"Category":"Office",				"File":"LibreOffice_4.4.3_Win_x86.msi",			"DL":"http://download.documentfoundation.org/libreoffice/stable/4.4.3/win/x86/LibreOffice_4.4.3_Win_x86.msi"},
+	
+	{"Name":"qBittorrent",					"Category":"Other",					"File":"qbittorrent_3.2.0_setup.exe",			"DL":"http://vorboss.dl.sourceforge.net/project/qbittorrent/qbittorrent-win32/qbittorrent-3.2.0/qbittorrent_3.2.0_setup.exe"},
+	{"Name":"Steam", 						"Category":"Other",					"File":"SteamSetup.exe",						"DL":"https://steamcdn-a.akamaihd.net/client/installer/SteamSetup.exe"},
+	{"Name":"ShareX",						"Category":"Other",					"File":"ShareX-9.10.1-setup.exe",				"DL":"https://github.com/ShareX/ShareX/releases/download/v9.10.1/ShareX-9.10.1-setup.exe"},
+	{"Name":"Team Viewer",					"Category":"Other",					"File":"TeamViewer_Setup.exe",					"DL":"http://download.teamviewer.com/download/TeamViewer_Setup.exe"},
+	
+	{"Name":"Rainmeter",					"Category":"Desktop",				"File":"Rainmeter-3.3-r2412-beta.exe",			"DL":"https://github.com/rainmeter/rainmeter/releases/download/v3.3.0.2412/Rainmeter-3.3-r2412-beta.exe"},
+	{"Name":"f.lux",						"Category":"Desktop",				"File":"flux-setup.exe",						"DL":"https://justgetflux.com/flux-setup.exe"},
+	
+	{"Name":"Hex Editor MX", 				"Category":"Development",			"File":"hexedit.zip",							"DL":"http://download.nextsoft.de/hexedit.zip"},
+	{"Name":"Notepad++", 					"Category":"Development",			"File":"npp.6.7.8.2.Installer.exe",				"DL":"https://notepad-plus-plus.org/repository/6.x/6.7.8.2/npp.6.7.8.2.Installer.exe"},
+	{"Name":"Process Hacker",				"Category":"Development",			"File":"processhacker-2.35-setup.exe",			"DL":"http://wj32.org/processhacker/rel/processhacker-2.35-setup.exe"},
+						
+	{"Name":"Open Hardware Monitor", 		"Category":"System Essentials",		"File":"openhardwaremonitor-v0.7.1-beta.zip",	"DL":"http://openhardwaremonitor.org/files/openhardwaremonitor-v0.7.1-beta.zip"},
+	{"Name":"Classic Shell", 				"Category":"System Essentials",		"File":"ClassicShellSetup_4_2_1.exe",			"DL":"http://www.mediafire.com/download/iwcm97wqp47gjjk/ClassicShellSetup_4_2_1.exe"},
+	{"Name":"Hash Check Shell",				"Category":"System Essentials",		"File":"HashCheckInstall-latest.exe",			"DL":"http://code.kliu.org/hashcheck/downloads/HashCheckInstall-latest.exe"},
+	{"Name":"Easy 7-zip", 					"Category":"System Essentials",		"File":"Easy7zip_x86_x64.exe",					"DL":"http://www.e7z.org/easy7zip_x86_x64.exe"},
+	{"Name":"Unchecky",						"Category":"System Essentials",		"File":"unchecky_setup.exe",					"DL":"http://cdn.unchecky.com/files/upload/unchecky_setup.exe"},
+	{"Name":"Malwarebytes Anti-Malware", 	"Category":"System Essentials",		"File":"mbam_setup.exe", 						"DL":"http://downloads.malwarebytes.org/file/mbam/"},
+	{"Name":"Windows Directory Statistics",	"Category":"System Essentials",		"File":"windirstat1_1_2_setup.exe", 			"DL":"http://vorboss.dl.sourceforge.net/project/windirstat/windirstat/1.1.2%20installer%20re-release%20%28more%20languages%21%29/windirstat1_1_2_setup.exe"},
+	{"Name":"AdwCleaner", 					"Category":"System Essentials",		"File":"adwcleaner_4.205.exe",					"DL":"http://downloads.malwarebytes.org/file/mbam/"}
+  ]
+}
