@@ -96,42 +96,19 @@ namespace ToolBox
             var jss = new JavaScriptSerializer();
             var dict = jss.Deserialize<Dictionary<string, dynamic>>(json);
 
-
-            //int y = 10;
-            //int x = 0;
-
             //One checkbox and one ProgramDL per program
             foreach (var value in dict["Programs"])
             {
-                ProgramDL program = new ProgramDL();
-                //CheckBox checkBox = new CheckBox();
+                ProgramDL program = new ProgramDL();      
                 
-                cbProgramList.Items.Add(value["Name"]);
-
-                //checkBox.Location = new Point(x+15, y);
-                //checkBox.Size = new Size(190, checkBox.Size.Height);
-                //checkBox.Text = value["Name"];
-                //Controls.Add(checkBox);
+                cbProgramList.Items.Add(value["Name"]); 
 
                 program.Name     = value["Name"];
                 program.Category = value["Category"];
                 program.File     = value["File"];
                 program.Dl       = value["DL"];
                 ProgramList.Add(program);
-                      
-                
-                //y += 20;
-
-                //Wenn die Form von der höhe her voll ist, spawnen die Checkboxen 150 Pixel weiter rechts
-                //very sub optimal
-                // if (checkBox.Location.Y + checkBox.Size.Height + 50 > Size.Height - panel1.Height )
-                //{
-                //y = 10;
-                //x += 200;
-                //Width = 200+x;   //450
-                //}
-            }
-            //cbProgramList.DataBindings.Add(ProgramList);
+            }                                                 
         }
 
         private async void btnNext_Click(object sender, EventArgs e)
@@ -182,32 +159,7 @@ namespace ToolBox
             btnNext.Enabled = true;
             btnUncheck.Enabled = true;
             cbProgramList.Enabled = true;
-
-            /*                
-            //jedes control wird gesucht
-            foreach (var item in cbProgramList.Items) 
-            {                                    
-
-                        int index = cbProgramList.SelectedIndex;                
-                        string _uri = ProgramList[index].Dl;
-                        Uri uri = new Uri (@_uri);
-                        string name = ProgramList[index].File;
-                        if (!File.Exists(name))
-                        {
-                            try
-                            {
-                                cbProgramList.SelectedItem = Color.Orange;
-                                WebClient client = new WebClient();
-                                await client.DownloadFileTaskAsync(uri, @"Downloads\" + name);
-                                ((CheckBox)control).ForeColor = Color.Green;
-                            }
-                            catch
-                            {                            
-                                ((CheckBox)control).ForeColor = Color.Red;
-                            }
-                        }       
-
-              }           */
+                 
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
@@ -244,21 +196,6 @@ namespace ToolBox
             protected HttpException(SerializationInfo info, StreamingContext context) : base(info, context)
             {
             }
-        }
-
-        private void cbProgramList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void progressDownloaded_Click(object sender, EventArgs e)
-        {
-
-        }
+        }       
     }
 }

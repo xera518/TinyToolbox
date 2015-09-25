@@ -1,6 +1,7 @@
 ﻿{
 "Fileversion":201505261937,
-"Mostrecent":"http://zerozero.schedar.uberspace.de/Database.json",
+"Mostrecent":"http://xera518.rasalhague.uberspace.de/Database.json",	 
+"Author":"Xera518",
 "Programs":
   [
     {"Name":"Opera",						"Category":"Browser", 				"File":"OperaStable.exe",						"DL":"http://net.geo.opera.com/opera/stable/windows"},	

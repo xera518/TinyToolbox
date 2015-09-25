@@ -34,10 +34,10 @@ namespace ToolBox
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.btnNext = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.progressDownloaded = new System.Windows.Forms.ProgressBar();
             this.btnUncheck = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
             this.cbProgramList = new System.Windows.Forms.CheckedListBox();
-            this.progressDownloaded = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +63,13 @@ namespace ToolBox
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(291, 67);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // progressDownloaded
+            // 
+            this.progressDownloaded.Location = new System.Drawing.Point(8, 42);
+            this.progressDownloaded.Name = "progressDownloaded";
+            this.progressDownloaded.Size = new System.Drawing.Size(276, 20);
+            this.progressDownloaded.TabIndex = 3;
             // 
             // btnUncheck
             // 
@@ -91,16 +97,7 @@ namespace ToolBox
             this.cbProgramList.Location = new System.Drawing.Point(5, 4);
             this.cbProgramList.Name = "cbProgramList";
             this.cbProgramList.Size = new System.Drawing.Size(280, 229);
-            this.cbProgramList.TabIndex = 2;
-            this.cbProgramList.SelectedIndexChanged += new System.EventHandler(this.cbProgramList_SelectedIndexChanged);
-            // 
-            // progressDownloaded
-            // 
-            this.progressDownloaded.Location = new System.Drawing.Point(8, 42);
-            this.progressDownloaded.Name = "progressDownloaded";
-            this.progressDownloaded.Size = new System.Drawing.Size(276, 20);
-            this.progressDownloaded.TabIndex = 3;
-            this.progressDownloaded.Click += new System.EventHandler(this.progressDownloaded_Click);
+            this.cbProgramList.TabIndex = 2;                                                                              
             // 
             // FrmMain
             // 
@@ -113,7 +110,7 @@ namespace ToolBox
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmMain";
-            this.Text = "Tolik\'s Tiny Toolbox";
+            this.Text = "Tiny Toolbox";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
