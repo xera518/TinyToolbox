@@ -84,7 +84,7 @@ namespace ToolBox
         {
            Updater();
              
-            Size = new Size(Size.Width, 350);
+            //Size = new Size(Size.Width, 350);
             //Database.json is read
             //{"Programs":
             //  [
@@ -95,21 +95,23 @@ namespace ToolBox
             string json = File.ReadAllText(@"Database.json");
             var jss = new JavaScriptSerializer();
             var dict = jss.Deserialize<Dictionary<string, dynamic>>(json);
-                                                                       
 
-            int y = 10;
-            int x = 0;
+
+            //int y = 10;
+            //int x = 0;
 
             //One checkbox and one ProgramDL per program
             foreach (var value in dict["Programs"])
             {
                 ProgramDL program = new ProgramDL();
-                CheckBox checkBox = new CheckBox();
+                //CheckBox checkBox = new CheckBox();
+                
+                cbProgramList.Items.Add(value["Name"]);
 
-                checkBox.Location = new Point(x+15, y);
-                checkBox.Size = new Size(190, checkBox.Size.Height);
-                checkBox.Text = value["Name"];
-                Controls.Add(checkBox);
+                //checkBox.Location = new Point(x+15, y);
+                //checkBox.Size = new Size(190, checkBox.Size.Height);
+                //checkBox.Text = value["Name"];
+                //Controls.Add(checkBox);
 
                 program.Name     = value["Name"];
                 program.Category = value["Category"];
@@ -118,27 +120,75 @@ namespace ToolBox
                 ProgramList.Add(program);
                       
                 
-                y += 20;
+                //y += 20;
 
                 //Wenn die Form von der höhe her voll ist, spawnen die Checkboxen 150 Pixel weiter rechts
                 //very sub optimal
-                if (checkBox.Location.Y + checkBox.Size.Height + 50 > Size.Height - panel1.Height )
-                {
-                    y = 10;
-                    x += 200;
-                    Width = 200+x;   //450
-                }
+                // if (checkBox.Location.Y + checkBox.Size.Height + 50 > Size.Height - panel1.Height )
+                //{
+                //y = 10;
+                //x += 200;
+                //Width = 200+x;   //450
+                //}
             }
+            //cbProgramList.DataBindings.Add(ProgramList);
         }
 
         private async void btnNext_Click(object sender, EventArgs e)
-        {    
-            //jedes control wird gesucht
-            foreach (var control in Controls) 
-            {                                    
-                if (control is CheckBox && ((CheckBox)control).Checked)
+        {
+
+            progressDownloaded.Value = 0;
+            double p = 100.0;
+            p = (double)(p / cbProgramList.CheckedItems.Count);
+
+            btnCheck.Enabled = false;
+            btnNext.Enabled = false;
+            btnUncheck.Enabled = false;
+            cbProgramList.Enabled = false;
+
+            for (int i = 0; i < cbProgramList.CheckedItems.Count; ++i)
                 {
-                        int index = ((CheckBox)control).TabIndex-2; // -2 because there are already 3 controls on the form (1x Panel, 2x Buttons)                   
+                                                            
+                    string _uri = ProgramList[i].Dl;
+                    Uri uri = new Uri(@_uri);
+                    string name = ProgramList[i].File;
+                    if (!File.Exists(name))
+                    {
+                        try
+                        {
+                            //cbProgramList.SelectedItem = Color.Orange;
+                            WebClient client = new WebClient();
+                            await client.DownloadFileTaskAsync(uri, @"Downloads\" + name);
+                            //cbProgramList.SelectedItem
+                            //((CheckBox)control).ForeColor = Color.Green;
+                        }
+                        catch
+                        {
+                            //download failed
+                            //((CheckBox)control).ForeColor = Color.Red;
+                        }
+                    
+                    }
+                    else
+                    {
+                        //was passiert wenn die datei schon existiert
+                    }
+                progressDownloaded.Value = (int)(i*p);
+            }
+
+            progressDownloaded.Value = 100;
+
+            btnCheck.Enabled = true;
+            btnNext.Enabled = true;
+            btnUncheck.Enabled = true;
+            cbProgramList.Enabled = true;
+
+            /*                
+            //jedes control wird gesucht
+            foreach (var item in cbProgramList.Items) 
+            {                                    
+
+                        int index = cbProgramList.SelectedIndex;                
                         string _uri = ProgramList[index].Dl;
                         Uri uri = new Uri (@_uri);
                         string name = ProgramList[index].File;
@@ -146,7 +196,7 @@ namespace ToolBox
                         {
                             try
                             {
-                                ((CheckBox)control).ForeColor = Color.Orange;
+                                cbProgramList.SelectedItem = Color.Orange;
                                 WebClient client = new WebClient();
                                 await client.DownloadFileTaskAsync(uri, @"Downloads\" + name);
                                 ((CheckBox)control).ForeColor = Color.Green;
@@ -155,24 +205,24 @@ namespace ToolBox
                             {                            
                                 ((CheckBox)control).ForeColor = Color.Red;
                             }
-                        } 
-                 }
-            }                            
+                        }       
+
+              }           */
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
-        {
-            foreach (CheckBox control in Controls.OfType<CheckBox>())
+        { 
+            for (int i = 0; i < cbProgramList.Items.Count; i++)
             {
-                (control).Checked = true;
+                cbProgramList.SetItemChecked(i,true);
             }
         }
 
         private void btnUncheck_Click(object sender, EventArgs e)
-        {
-            foreach (CheckBox control in Controls.OfType<CheckBox>())
+        {   
+            for (int i = 0; i < cbProgramList.Items.Count; i++)
             {
-                (control).Checked = false;
+                cbProgramList.SetItemChecked(i,false);
             }
         }
 
@@ -194,6 +244,21 @@ namespace ToolBox
             protected HttpException(SerializationInfo info, StreamingContext context) : base(info, context)
             {
             }
+        }
+
+        private void cbProgramList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void progressDownloaded_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
